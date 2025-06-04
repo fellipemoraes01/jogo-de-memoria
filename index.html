@@ -69,7 +69,7 @@
             padding: 20px; 
             text-align: center;
             position: relative;
-            overflow-x: hidden; /* Mantido, mas a centralização robusta deve evitar problemas */
+            overflow-x: hidden; 
         }
 
         body::before {
@@ -86,7 +86,6 @@
         .main-header { 
             width: 100%;
             max-width: 850px; 
-            /* MODIFICAÇÃO: Centralização explícita */
             margin-left: auto;
             margin-right: auto;
             margin-bottom: 30px; 
@@ -103,17 +102,16 @@
             text-shadow: 1px 1px 3px rgba(255,255,255,0.6); 
         }
 
-        .screen {
+        .screen { /* Estilo para a tela de fim de jogo */
             display: none; 
             flex-direction: column;
             align-items: center;
             justify-content: center;
             width: 100%;
             max-width: 700px; 
-            /* MODIFICAÇÃO: Centralização explícita */
             margin-left: auto;
             margin-right: auto;
-            margin-top: 20px; /* Adiciona margem para separar do header se ambos visíveis */
+            margin-top: 20px; 
             margin-bottom: 20px;
             padding: 35px 45px; 
             background-color: var(--lm-win-panel-bg);
@@ -130,18 +128,18 @@
             to { opacity: 1; transform: translateY(0); }
         }
 
-        .screen h2 {
+        .screen h2 { /* Para o título da tela de fim */
             font-size: 2.4rem; 
             color: var(--lm-win-header-text);
             margin-bottom: 22px; 
         }
-        .screen p {
+        .screen p { /* Para parágrafos na tela de fim, se houver */
             font-size: 1.15rem; 
             line-height: 1.65; 
             margin-bottom: 28px; 
             color: var(--lm-win-text-dark);
         }
-        .screen .stats-item {
+        .screen .stats-item { /* Para itens de estatísticas na tela de fim */
             font-size: 1.25rem; 
             margin-bottom: 12px; 
         }
@@ -149,7 +147,7 @@
             color: var(--lm-win-header-text);
         }
 
-        .screen-button {
+        .screen-button { /* Para o botão "Jogar Novamente" na tela de fim */
             background-image: linear-gradient(to right, #5C85D6 0%, #293A80 50%, #5C85D6 100%);
             background-size: 220% auto;
             color: var(--lm-win-text-light);
@@ -172,16 +170,15 @@
         }
 
         #game-main-content { 
-            display: none; 
+            display: none; /* Inicialmente escondido, JS tornará ativo */
             flex-direction: column;
-            align-items: center; /* Centraliza seus filhos (painel, tabuleiro, controles) */
+            align-items: center; 
             width: 100%;
             max-width: 1200px; 
-            /* MODIFICAÇÃO: Centralização explícita */
             margin-left: auto;
             margin-right: auto;
         }
-        #game-main-content.active {
+        #game-main-content.active { /* Jogo principal visível */
             display: flex;
             animation: fadeInScreen 0.5s ease-out forwards;
         }
@@ -192,7 +189,7 @@
             align-items: center;
             flex-wrap: wrap; 
             gap: 12px 18px; 
-            width: 100%; /* Ocupa a largura do pai (#game-main-content) até o max-width */
+            width: 100%; 
             max-width: 750px; 
             padding: 15px 22px; 
             margin-bottom: 28px; 
@@ -200,7 +197,6 @@
             border-radius: var(--panel-border-radius);
             box-shadow: 0 5px 15px var(--shadow-color-medium);
             border: 1px solid var(--lm-win-panel-border);
-            /* Não precisa de margin auto aqui, pois é filho de um flex container (#game-main-content) com align-items: center */
         }
         .info-item {
             font-size: 1.2rem; 
@@ -220,11 +216,10 @@
             display: grid;
             grid-template-columns: repeat(5, 1fr);
             gap: 20px; 
-            width: 100%; /* Ocupa a largura do pai (#game-main-content) até o max-width */
+            width: 100%; 
             max-width: calc(5 * var(--card-width-lg) + 4 * 20px);
             perspective: 1500px;
             margin-bottom: 25px; 
-            /* Não precisa de margin auto aqui, pois é filho de um flex container (#game-main-content) com align-items: center */
         }
 
         .card-face {
@@ -309,7 +304,6 @@
 
         .game-controls {
             margin-top: 22px; 
-            /* Centralizado pelo pai #game-main-content */
         }
 
         #restart-game-button { 
@@ -333,7 +327,7 @@
             transform: translateY(-3px);
         }
 
-        .game-message { 
+        .game-message { /* Usado na tela de fim */
             font-size: 1.6rem; 
             font-weight: 700;
             color: var(--success-color);
@@ -420,7 +414,7 @@
             .screen { padding: 25px 30px; }
             .screen h2 { font-size: 2rem; }
             .screen p { font-size: 1.05rem; }
-            .game-info-panel { max-width: 90%; padding: 12px 18px; margin-bottom: 22px;} /* max-width 90% já o torna responsivo */
+            .game-info-panel { max-width: 90%; padding: 12px 18px; margin-bottom: 22px;} 
             .info-item { font-size: 1.1rem; }
 
             .memory-game-board {
@@ -438,12 +432,12 @@
             body { padding: 15px; }
             .main-header { margin-bottom: 20px; padding: 12px 20px;}
             .main-header h1 { font-size: 2rem; }
-            .screen { padding: 20px 18px; } /* max-width 95% já está do breakpoint anterior */
+            .screen { padding: 20px 18px; } 
             .screen h2 { font-size: 1.7rem; }
             .screen p { font-size: 0.95rem; }
             .screen .stats-item { font-size: 1.05rem; }
             .screen-button, #restart-game-button { font-size: 1rem; padding: 12px 25px;}
-            .game-info-panel { flex-direction: column; gap: 10px; margin-bottom: 20px;} /* max-width 90% já está do breakpoint anterior */
+            .game-info-panel { flex-direction: column; gap: 10px; margin-bottom: 20px;} 
 
 
             .memory-game-board {
@@ -507,13 +501,9 @@
         <h1>Jogo da Memória LM Win</h1>
     </header>
 
-    <section id="start-screen" class="screen active">
-        <h2>Bem-vindo ao LM Win!</h2>
-        <p>Teste sua memória e encontre todos os pares de cartas. Clique em "Iniciar Jogo" para começar a diversão!</p>
-        <button id="start-game-button" class="screen-button">Iniciar Jogo</button>
-    </section>
+    <!-- Tela de Início Removida -->
 
-    <main id="game-main-content">
+    <main id="game-main-content"> <!-- Será ativado por JS -->
         <div class="game-info-panel">
             <div class="info-item">Tempo: <span id="time-display">00:00</span></div>
             <div class="info-item">Tentativas: <span id="attempts-display">0</span></div>
@@ -529,7 +519,7 @@
         </div>
     </main>
 
-    <section id="end-screen" class="screen">
+    <section id="end-screen" class="screen"> <!-- Tela de Fim continua escondida por padrão -->
         <h2 id="end-game-message">Parabéns, você venceu!</h2>
         <div class="stats">
             <p class="stats-item">Seu tempo: <strong id="final-time">00:00</strong></p>
@@ -551,8 +541,8 @@
             const attemptsDisplay = document.getElementById('attempts-display');
             const scoreDisplay = document.getElementById('score-display'); 
 
-            const startScreen = document.getElementById('start-screen');
-            const startGameButton = document.getElementById('start-game-button');
+            // const startScreen = document.getElementById('start-screen'); // Removido
+            // const startGameButton = document.getElementById('start-game-button'); // Removido
             const gameMainContent = document.getElementById('game-main-content');
             const endScreen = document.getElementById('end-screen');
             const playAgainButton = document.getElementById('play-again-button');
@@ -808,21 +798,22 @@
 
                 createBoard(); 
                 
-                startScreen.classList.remove('active');
+                // startScreen.classList.remove('active'); // Removido
                 endScreen.classList.remove('active');
                 gameMainContent.classList.add('active');
                 srAnnouncements.textContent = 'Jogo iniciado.';
             }
 
-            startGameButton.addEventListener('click', initializeGame);
+            // startGameButton.addEventListener('click', initializeGame); // Removido
             playAgainButton.addEventListener('click', initializeGame);
             restartGameButton.addEventListener('click', () => {
                 initializeGame();
             });
 
-            startScreen.classList.add('active');
-            gameMainContent.classList.remove('active');
-            endScreen.classList.remove('active');
+            // Modificação: Iniciar o jogo diretamente
+            initializeGame(); 
+            // gameMainContent.classList.add('active'); // Já é feito em initializeGame
+            // endScreen.classList.remove('active'); // Já é feito em initializeGame
         });
     </script>
 </body>
